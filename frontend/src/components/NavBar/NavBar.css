@@ -1,7 +1,14 @@
+nav{
+  height: 600px;
+  width: 1000px;
+  margin: auto;
+}
+
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 
   top: 0px;
   right: 0px;

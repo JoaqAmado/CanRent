@@ -3,16 +3,15 @@ import LandingPage from "./pages/LandingPage/LandingPage.jsx";
 import Property from "./pages/Property/Property.jsx";
 import Search from "./pages/Search/Search.jsx";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx";
+
+import NavBar from "./components/NavBar/NavBar.jsx";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
 
   return (
     <BrowserRouter>
-      <nav>
-        <Link></Link>
-      </nav>
-
+      <NavBar />
 
       <Routes>
         <Route path="/" element={<LandingPage/>}></Route>
