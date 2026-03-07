@@ -72,13 +72,26 @@ function Saved() {
                                 <Link to={`/property/${prop.id}`} key={prop.id} className="property-card">
                                     <div className="card-image-wrapper">
                                         <img src={prop.imageUrl} alt={prop.title} className="card-img" />
-                                        <button 
-                                            className="remove-btn"
-                                            onClick={(e) => handleRemoveSaved(e, prop.id)}
-                                            aria-label="Remove property"
-                                        >
-                                            ✕
-                                        </button>
+                                        <div className="card-actions" style={{ position: 'absolute', top: '1rem', right: '1rem', display: 'flex', gap: '0.5rem', zIndex: 2 }}>
+                                            <a 
+                                                href={prop.originalLink} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                className="btn-icon ext-link-btn"
+                                                onClick={(e) => e.stopPropagation()}
+                                                title="View original posting"
+                                            >
+                                                ↗
+                                            </a>
+                                            <button 
+                                                className="remove-btn"
+                                                style={{ position: 'static' }}
+                                                onClick={(e) => handleRemoveSaved(e, prop.id)}
+                                                aria-label="Remove property"
+                                            >
+                                                ✕
+                                            </button>
+                                        </div>
                                     </div>
                                     <div className="card-content">
                                         <h3 className="card-title">{prop.title}</h3>
@@ -178,10 +191,18 @@ function Saved() {
                                         <tr>
                                             <td className="feature-label">Action</td>
                                             {compareList.map(prop => (
-                                                <td key={`act-${prop.id}`}>
+                                                <td key={`act-${prop.id}`} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                                                     <Link to={`/property/${prop.id}`} className="btn btn-primary btn-sm block-btn">
                                                         View Details
                                                     </Link>
+                                                    <a 
+                                                        href={prop.originalLink} 
+                                                        target="_blank" 
+                                                        rel="noopener noreferrer" 
+                                                        className="btn btn-outline btn-sm block-btn"
+                                                    >
+                                                        Original Link ↗
+                                                    </a>
                                                 </td>
                                             ))}
                                         </tr>

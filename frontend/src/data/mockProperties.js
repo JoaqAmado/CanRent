@@ -11,7 +11,8 @@ export const mockProperties = [
         imageUrl: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1000&auto=format&fit=crop",
         bedrooms: 1,
         bathrooms: 1,
-        features: ["In-unit Washer/Dryer", "Gym Access", "City View"]
+        features: ["In-unit Washer/Dryer", "Gym Access", "City View"],
+        originalLink: "https://example.com/ref/toronto-loft-1"
     },
     {
         id: "prop-002",
@@ -23,7 +24,8 @@ export const mockProperties = [
         imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000&auto=format&fit=crop",
         bedrooms: 3,
         bathrooms: 2,
-        features: ["Backyard", "Garage Parking", "Pet Friendly"]
+        features: ["Backyard", "Garage Parking", "Pet Friendly"],
+        originalLink: "https://example.com/ref/mississauga-townhouse-2"
     },
     {
         id: "prop-003",
@@ -35,7 +37,8 @@ export const mockProperties = [
         imageUrl: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1000&auto=format&fit=crop",
         bedrooms: 2,
         bathrooms: 2,
-        features: ["Balcony", "Pool", "24/7 Concierge"]
+        features: ["Balcony", "Pool", "24/7 Concierge"],
+        originalLink: "https://example.com/ref/toronto-condo-3"
     },
     {
         id: "prop-004",
@@ -47,7 +50,8 @@ export const mockProperties = [
         imageUrl: "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?q=80&w=1000&auto=format&fit=crop",
         bedrooms: 0,
         bathrooms: 1,
-        features: ["Furnished", "Utilities Included", "Close to Transit"]
+        features: ["Furnished", "Utilities Included", "Close to Transit"],
+        originalLink: "https://example.com/ref/waterloo-studio-4"
     },
     {
         id: "prop-005",
@@ -59,7 +63,8 @@ export const mockProperties = [
         imageUrl: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1000&auto=format&fit=crop",
         bedrooms: 4,
         bathrooms: 3,
-        features: ["Large Yard", "Finished Basement", "Near Schools"]
+        features: ["Large Yard", "Finished Basement", "Near Schools"],
+        originalLink: "https://example.com/ref/markham-house-5"
     },
     {
         id: "prop-006",
@@ -71,7 +76,8 @@ export const mockProperties = [
         imageUrl: "https://images.unsplash.com/photo-1493809842364-fbbd8108cdb6?q=80&w=1000&auto=format&fit=crop",
         bedrooms: 2,
         bathrooms: 1,
-        features: ["Exposed Brick", "High Ceilings", "Hardwood Floors"]
+        features: ["Exposed Brick", "High Ceilings", "Hardwood Floors"],
+        originalLink: "https://example.com/ref/ottawa-apartment-6"
     },
     {
         id: "prop-007",
@@ -83,7 +89,8 @@ export const mockProperties = [
         imageUrl: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=1000&auto=format&fit=crop",
         bedrooms: 2,
         bathrooms: 2.5,
-        features: ["Panoramic Views", "Smart Home", "Private Terrace"]
+        features: ["Panoramic Views", "Smart Home", "Private Terrace"],
+        originalLink: "https://example.com/ref/vancouver-penthouse-7"
     },
     {
         id: "prop-008",
@@ -95,6 +102,7 @@ export const mockProperties = [
         imageUrl: "https://images.unsplash.com/photo-1502672260266-1c1ea52efff6?q=80&w=1000&auto=format&fit=crop",
         bedrooms: 1,
         bathrooms: 1,
-        features: ["Private Entrance", "Street Parking", "Internet Included"]
+        features: ["Private Entrance", "Street Parking", "Internet Included"],
+        originalLink: "https://example.com/ref/scarborough-basement-8"
     }
 ];

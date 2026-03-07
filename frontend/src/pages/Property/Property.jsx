@@ -104,9 +104,20 @@ function Property() {
                         >
                             {saved ? '♥ Saved to Favorites' : '♡ Save Property'}
                         </button>
-                        <button className="btn btn-large btn-outline">
-                            Contact Agent
-                        </button>
+                        <div style={{ display: 'flex', gap: '1rem' }}>
+                            <button className="btn btn-large btn-outline" style={{ flex: 1 }}>
+                                Contact Agent
+                            </button>
+                            <a 
+                                href={property.originalLink} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="btn btn-large btn-outline"
+                                style={{ flex: 1 }}
+                            >
+                                Original Posting ↗
+                            </a>
+                        </div>
                     </div>
                 </div>
             </main>

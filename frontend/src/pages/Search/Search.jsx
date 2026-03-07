@@ -131,14 +131,27 @@ function Search() {
                                         <div className="card-badges">
                                             <span className="badge review-badge">★ {prop.review}</span>
                                         </div>
-                                        <button 
-                                            className={`save-btn ${isSaved(prop.id) ? 'saved' : ''}`}
-                                            onClick={(e) => handleSaveToggle(e, prop)}
-                                            disabled={isSaved(prop.id)}
-                                            aria-label="Save property"
-                                        >
-                                            {isSaved(prop.id) ? '♥ Saved' : '♡ Save'}
-                                        </button>
+                                        <div className="card-actions" style={{ position: 'absolute', top: '1rem', right: '1rem', display: 'flex', gap: '0.5rem', zIndex: 2 }}>
+                                            <a 
+                                                href={prop.originalLink} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                className="btn-icon ext-link-btn"
+                                                onClick={(e) => e.stopPropagation()}
+                                                title="View original posting"
+                                            >
+                                                ↗
+                                            </a>
+                                            <button 
+                                                className={`save-btn ${isSaved(prop.id) ? 'saved' : ''}`}
+                                                style={{ position: 'static' }}
+                                                onClick={(e) => handleSaveToggle(e, prop)}
+                                                disabled={isSaved(prop.id)}
+                                                aria-label="Save property"
+                                            >
+                                                {isSaved(prop.id) ? '♥ Saved' : '♡ Save'}
+                                            </button>
+                                        </div>
                                     </div>
                                     <div className="card-content">
                                         <h3 className="card-title">{prop.title}</h3>
