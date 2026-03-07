@@ -1,31 +1,52 @@
-import "./NavBar.css";
+import { Link, useLocation } from "react-router-dom";
+import { useSaved } from "../../context/SavedContext.jsx";
 import Logo from "../../assets/CanRentLogo.png";
-import { Link } from "react-router-dom";
+import "./NavBar.css";
 
 function NavBar() {
-    return (
-        <nav>
-            <div className="header">
-                {/* logo and welcome message at the top of the landing page. */}
-                <div>
-                    <img style={{width: "100px"}} src={ Logo }></img>
-                    <span className="welcome-message">Welcome to CanRent</span>
-                </div>
+    const { savedProperties } = useSaved();
+    const location = useLocation();
 
-                {/* this section contains buttons linked to the other pages. */}
-                <ul className="tabs">
-                    <li className="tabs-button">
-                        <Link to="/" className="tabs-label">Home</Link>
+    return (
+        <nav className="navbar glass">
+            <div className="navbar-container">
+                <Link to="/" className="navbar-logo">
+                    <img src={Logo} alt="CanRent Logo" className="logo-img" />
+                    <span className="logo-text">CanRent</span>
+                </Link>
+
+                <ul className="nav-menu">
+                    <li className="nav-item">
+                        <Link 
+                            to="/" 
+                            className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+                        >
+                            Home
+                        </Link>
                     </li>
-                    <li className="tabs-button">
-                        <Link to="/search" className="tabs-label">Browse</Link>
+                    <li className="nav-item">
+                        <Link 
+                            to="/search" 
+                            className={`nav-link ${location.pathname === '/search' ? 'active' : ''}`}
+                        >
+                            Search
+                        </Link>
                     </li>
-                    <li className="tabs-button">
-                        <Link to="/property" className="tabs-label">Saved</Link>
+                    <li className="nav-item">
+                        <Link 
+                            to="/saved" 
+                            className={`nav-link saved-link ${location.pathname === '/saved' ? 'active' : ''}`}
+                        >
+                            Saved
+                            {savedProperties.length > 0 && (
+                                <span className="saved-badge">{savedProperties.length}</span>
+                            )}
+                        </Link>
                     </li>
                 </ul>
             </div>
         </nav>
     );
 }
+
 export default NavBar;

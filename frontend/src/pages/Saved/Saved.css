@@ -1,0 +1,235 @@
+.saved-page {
+    padding-top: 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-inline: 2rem;
+    padding-bottom: 4rem;
+    min-height: 100vh;
+}
+
+.saved-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 1.5rem;
+    animation: fadeUp 0.6s ease-out forwards;
+}
+
+.saved-header h2 {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.saved-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.compare-toggle-btn {
+    min-width: 180px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 5rem 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--border-dark);
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+/* Redefine Property card specifically for Saved view remove button */
+.remove-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-main);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: var(--shadow-md);
+    z-index: 2;
+    transition: all var(--transition-fast);
+}
+
+.remove-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Compare View */
+.compare-container {
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.compare-table th {
+    min-width: 250px;
+    padding: 1rem;
+    vertical-align: top;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.feature-label {
+    font-weight: 600;
+    color: var(--text-muted);
+    width: 150px;
+    background-color: var(--surface-hover);
+    border-right: 1px solid var(--border-light);
+}
+
+.compare-table td {
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-main);
+}
+
+.compare-header-card {
+    position: relative;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.compare-remove {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background: white;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.compare-remove:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.compare-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: 1rem;
+}
+
+.compare-header-card h4 {
+    font-size: 1.1rem;
+}
+
+.price-cell {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.text-sm {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.review-tag {
+    background: var(--accent);
+    color: #1a1a1a;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.feature-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.25rem;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.feature-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+.btn-sm {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+}
+
+.block-btn {
+    display: flex;
+    width: 100%;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .saved-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
