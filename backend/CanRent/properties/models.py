@@ -12,4 +12,4 @@ class Property(models.Model):
     bedrooms = models.IntegerField()
     bathrooms = models.IntegerField()
     features = models.JSONField(default=list)
-    original_link = models.URLField(max_length=500, blank=True, null=True)
+    originalLink = models.URLField(max_length=500, blank=True, null=True)
