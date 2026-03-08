@@ -193,15 +193,15 @@ function Saved() {
                                         <tr>
                                             <td className="feature-label">Action</td>
                                             {compareList.map(prop => (
-                                                <td key={`act-${prop.id}`} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                                                    <Link to={`/property/${prop.id}`} className="btn btn-primary btn-sm block-btn">
+                                                <td key={`act-${prop.id}`} style={{ display: 'inline-flex', gap: '2rem'}}>
+                                                    <Link to={`/property/${prop.id}`} className="btn btn-primary btn-sm">
                                                         View Details
                                                     </Link>
                                                     <a 
                                                         href={prop.originalLink} 
                                                         target="_blank" 
                                                         rel="noopener noreferrer" 
-                                                        className="btn btn-outline btn-sm block-btn"
+                                                        className="btn btn-outline btn-sm"
                                                     >
                                                         Original Link ↗
                                                     </a>
