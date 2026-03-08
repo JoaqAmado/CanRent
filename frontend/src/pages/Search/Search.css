@@ -23,6 +23,17 @@
     font-size: 1.1rem;
 }
 
+.browse-header {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.browse-icon {
+    width: 45px;
+    align-items: center;
+    object-fit: cover;
+}
+
 .search-layout {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -90,7 +101,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    animation: fadeUp 0.8s ease-out forwards;
+    animation: fadeUp 0.5s ease-out forwards;
 }
 
 .results-info {

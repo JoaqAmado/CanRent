@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { useSaved } from "../../context/SavedContext.jsx";
 import { mockProperties } from "../../data/mockProperties.js";
 import { Link } from "react-router-dom";
+import browse from "../../assets/BrowseHousing.png"
 import "./Search.css";
 
 function Search() {
@@ -35,7 +36,8 @@ function Search() {
     return (
         <div className="search-page">
             <div className="search-header">
-                <h2>Browse Properties</h2>
+                <h2 class="browse-header">Browse Properties</h2>
+                <img src={browse} className="browse-icon"></img>
                 <p>Find the perfect match for your lifestyle and budget.</p>
             </div>
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSaved } from "../../context/SavedContext.jsx";
 import { Link } from "react-router-dom";
+import saved from "../../assets/Bookmarks.png"
 import "./Saved.css";
 
 function Saved() {
@@ -40,8 +41,9 @@ function Saved() {
     return (
         <div className="saved-page">
             <div className="saved-header">
-                <div className="header-text">
-                    <h2>Your Saved Properties</h2>
+                <div>
+                    <h2 className="saved-properties">Your Saved Properties</h2>
+                    <img src={saved} className="bookmarks"></img>
                     <p>You have {savedProperties.length} properties saved for later.</p>
                 </div>
                 {savedProperties.length > 1 && (

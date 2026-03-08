@@ -22,10 +22,10 @@
 
   /* Borders */
   --border-light: #e5e7eb;
-  --border-dark: #d1d5db;
+  --border-dark: #b6bac1;
 
   /* Layout and Shapes */
-  --radius-sm: 6px;
+  --radius-sm: 5px;
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-full: 9999px;
@@ -77,9 +77,9 @@ button {
 
 /* Reusable Glassmorphism Utility */
 .glass {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 249, 249, 0.887);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 118, 118, 0.711);
   box-shadow: var(--shadow-glass);
 }
