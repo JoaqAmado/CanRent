@@ -193,18 +193,20 @@ function Saved() {
                                         <tr>
                                             <td className="feature-label">Action</td>
                                             {compareList.map(prop => (
-                                                <td key={`act-${prop.id}`} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                                                    <Link to={`/property/${prop.id}`} className="btn btn-primary btn-sm block-btn">
-                                                        View Details
-                                                    </Link>
-                                                    <a 
-                                                        href={prop.originalLink} 
-                                                        target="_blank" 
-                                                        rel="noopener noreferrer" 
-                                                        className="btn btn-outline btn-sm block-btn"
-                                                    >
-                                                        Original Link ↗
-                                                    </a>
+                                                <td key={`act-${prop.id}`}>
+                                                    <div style={{ display: 'flex', flexDirection: 'row', gap: '0.5rem', flexWrap: 'wrap' }}>
+                                                        <Link to={`/property/${prop.id}`} className="btn btn-primary btn-sm">
+                                                            View Details
+                                                        </Link>
+                                                        <a 
+                                                            href={prop.originalLink} 
+                                                            target="_blank" 
+                                                            rel="noopener noreferrer" 
+                                                            className="btn btn-outline btn-sm"
+                                                        >
+                                                            Original Link ↗
+                                                        </a>
+                                                    </div>
                                                 </td>
                                             ))}
                                         </tr>

@@ -1,16 +1,45 @@
 import { useParams, Link } from "react-router-dom";
 import { useSaved } from "../../context/SavedContext.jsx";
-import { mockProperties } from "../../data/mockProperties.js";
+import { useState, useEffect } from "react";
 import "./Property.css";
 
 function Property() {
     const { id } = useParams();
     const { addSaved, removeSaved, isSaved } = useSaved();
+
+    const API_BASE = import.meta.env.VITE_API_URL;
+    const [property, setProperty] = useState(null);
+    const [loading, setLoading] = useState(true);
     
     // Find the property from mock data based on the route ID
-    const property = mockProperties.find(p => p.id === id);
+    useEffect(() => {
+        setLoading(true);
+        fetch(`${API_BASE}/api/properties/${id}`)
+        .then(res => {
+            if (!res.ok) throw new Error("Property not found");
+            return res.json();
+        })
+        .then(data => {
+            setProperty(data);
+            setLoading(false);
+        })
+        .catch(err => {
+            console.error(err);
+            setLoading(false);
+        });
+    }, [id, API_BASE]);
 
-    if (!property) {
+    if (loading) {
+        return (
+            <div className="property-page">
+                <div className="property-not-found">
+                    <h2>Loading Property Details...</h2>
+                </div>
+            </div>
+        );
+    }
+
+    if (!property || Object.keys(property).length === 0) {
         return (
             <div className="property-not-found">
                 <h2>Property Not Found</h2>

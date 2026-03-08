@@ -1,29 +1,31 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useSaved } from "../../context/SavedContext.jsx";
-import { mockProperties } from "../../data/mockProperties.js";
 import { Link } from "react-router-dom";
 import browse from "../../assets/BrowseHousing.png"
 import "./Search.css";
 
 function Search() {
     const { addSaved, isSaved } = useSaved();
+    const API_BASE = import.meta.env.VITE_API_URL;
     
     // Filter States
     const [location, setLocation] = useState("");
     const [maxPrice, setMaxPrice] = useState(5000);
     const [minSize, setMinSize] = useState(0);
     const [minReview, setMinReview] = useState(0);
+    const [properties, setProperties] = useState([]);
 
     // Derived State for Filtered Properties
-    const filteredProperties = useMemo(() => {
-        return mockProperties.filter(prop => {
-            const matchesLocation = prop.location.toLowerCase().includes(location.toLowerCase());
-            const matchesPrice = prop.price <= maxPrice;
-            const matchesSize = prop.size >= minSize;
-            const matchesReview = prop.review >= minReview;
-            return matchesLocation && matchesPrice && matchesSize && matchesReview;
+    useEffect(() => {
+        fetch(`${API_BASE}/api/properties/?location=${location}&max_price=${maxPrice}&min_size=${minSize}&min_rating=${minReview}`)
+        .then(res => res.json())
+        .then(data => {
+            setProperties(data);
+        })
+        .catch(err => {
+            console.error("Fetch error:", err);
         });
-    }, [location, maxPrice, minSize, minReview]);
+    }, [location, maxPrice, minSize, minReview, API_BASE]);
 
     const handleSaveToggle = (e, prop) => {
         e.preventDefault(); // Prevent navigating if this is inside a Link
@@ -36,7 +38,7 @@ function Search() {
     return (
         <div className="search-page">
             <div className="search-header">
-                <h2 class="browse-header">Browse Properties</h2>
+                <h2 className="browse-header">Browse Properties</h2>
                 <img src={browse} className="browse-icon"></img>
                 <p>Find the perfect match for your lifestyle and budget.</p>
             </div>
@@ -116,17 +118,17 @@ function Search() {
                 {/* Results Grid */}
                 <main className="results-pane">
                     <div className="results-info">
-                        Showing {filteredProperties.length} properties
+                        Showing {properties.length} properties
                     </div>
                     
-                    {filteredProperties.length === 0 ? (
+                    {properties.length === 0 ? (
                         <div className="no-results glass">
                             <h3>No properties found</h3>
                             <p>Try adjusting your search filters.</p>
                         </div>
                     ) : (
                         <div className="property-grid">
-                            {filteredProperties.map((prop) => (
+                            {properties.map((prop) => (
                                 <Link to={`/property/${prop.id}`} key={prop.id} className="property-card">
                                     <div className="card-image-wrapper">
                                         <img src={prop.imageUrl} alt={prop.title} className="card-img" />
